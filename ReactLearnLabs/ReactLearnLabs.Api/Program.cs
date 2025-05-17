@@ -8,6 +8,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<SqliteDbContext>(options => options.UseSqlite("Data source=products.db"));
 builder.Services.AddOpenApi();
+/*builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowStaticWebApp", policy => policy
+        .WithOrigins("https://proud-rock-06e1d6303.6.azurestaticapps.net")
+        .AllowAnyHeader()
+        .AllowAnyMethod());
+});*/
 
 var app = builder.Build();
 
@@ -26,6 +33,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+// app.UseCors("AllowStaticWebApp");
 app.UseHttpsRedirection();
 app.MapProductEndpoints();
 
