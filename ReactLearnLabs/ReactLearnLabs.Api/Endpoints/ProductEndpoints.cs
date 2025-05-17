@@ -13,7 +13,7 @@ public static class ProductEndpoints
         group.MapGet("/", async (SqliteDbContext db) => await db.Products.ToListAsync());
 
         group.MapGet("{id:int}",
-            async (int id, SqliteDbContext db) => await db.Products.FindAsync(id) is Product product
+            async (int id, SqliteDbContext db) => await db.Products.FindAsync(id) is { } product
                 ? Results.Ok((object?)product)
                 : Results.NotFound());
         
