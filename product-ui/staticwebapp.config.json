@@ -1,8 +1,1 @@
-{
-  "routes": [
-    {
-      "route": "/api/*",
-      "rewrite": "https://product-api-20886-accebne8apcceabd.uksouth-01.azurewebsites.net/:*"
-    }
-  ]
-}
+{}
