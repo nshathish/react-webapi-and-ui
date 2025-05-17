@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import ProductListWrapper from './components/ProductListWrapper.tsx';
 
 export default function App() {
+  console.log('Inlined:', import.meta.env);
+
   useEffect(() => {
     console.log('API Base:', import.meta.env.VITE_API_URL);
   }, []);
