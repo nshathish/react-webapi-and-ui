@@ -1,6 +1,6 @@
 import type { Product } from '../types/product.ts';
 
-const API_BASE = import.meta.env.DEV ? 'api' : import.meta.env.VIT_API_URL;
+const API_BASE = import.meta.env.DEV ? 'api' : import.meta.env.VITE_API_URL;
 
 let getProductsPromise: Promise<Product[]> | null = null;
 
