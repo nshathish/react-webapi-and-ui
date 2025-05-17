@@ -7,6 +7,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'ReactLearnLabs/**'
+      - '.github/workflows/main_az204labs-api-6490.yml'
   workflow_dispatch:
 
 jobs:
