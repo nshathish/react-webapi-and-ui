@@ -1,10 +1,9 @@
-import type { Product } from '../types/product.ts';
+import { use } from 'react';
 
-interface ProductListProps {
-  products: Product[];
-}
+import { getProducts } from '../services/productService.ts';
 
-export default function ProductList({ products }: ProductListProps) {
+export default function ProductList() {
+  const products = use(getProducts());
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full border border-gray-300 rounded">
