@@ -18,16 +18,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up .NET Core
+      - name: Set up .NET 9
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '3.1'
+          dotnet-version: '9.x'
+
+      - name: Restore dependencies
+        run: dotnet restore ./ReactLearnLabs
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build ./ReactLearnLabs --configuration Release --no-restore
 
-      - name: dotnet publish
-        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+      - name: Publish App
+        run: dotnet publish ./ReactLearnLabs -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
