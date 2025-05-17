@@ -1,7 +1,10 @@
-import { type ComponentType, lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
+
 import ErrorBoundary from './ErrorBoundary.tsx';
 
-const ProductList = lazy(
+const ProductList = lazy(() => import('./ProductList.tsx'));
+
+/*const ProductList = lazy(
   () =>
     new Promise<{ default: ComponentType }>((resolve) => {
       setTimeout(() => {
@@ -10,7 +13,7 @@ const ProductList = lazy(
         );
       }, 2000);
     }),
-);
+);*/
 
 function BigSpinner() {
   return <h2>🌀 Loading...</h2>;
