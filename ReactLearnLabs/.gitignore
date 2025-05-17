@@ -1,0 +1,37 @@
+# Ignore build output
+**/bin/
+**/obj/
+**/TestResults/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code / Rider / IDE
+.vscode/
+.idea/
+*.code-workspace
+.vs/
+
+# Logs
+*.log
+
+# EF Core migrations (optional)
+**/Migrations/
+
+# Local DB files
+**/*.db
+**/secrets.json
+
+# ASP.NET Scaffolding
+**/ScaffoldingReadMe.txt
+
+# Publish Profiles
+**/Properties/PublishProfiles/
+**/Properties/ServiceDependencies/
+
+# Env and secrets
+.env
+.env.*
